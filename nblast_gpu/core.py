@@ -17,6 +17,7 @@ import navis
 import numpy as np
 import pandas as pd
 
+from navis.nbl.nblast_funcs import nblast_preflight
 from torch_cluster import knn
 from tqdm.auto import tqdm
 
