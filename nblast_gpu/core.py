@@ -96,8 +96,8 @@ def nblast(queries: navis.NeuronList,
     # Calculate self-hits for normalization
     self_hits = []
     for n in queries:
-        self_hits.append(len(n.points) * score_fn(0, 1.0))
-        self_hits = np.array(self_hits)
+        self_hits.append(len(n.points) * fcwb_score_fn(0, 1.0))
+    self_hits = np.array(self_hits)
 
     for t in tqdm(targets, desc='NBLASTing', disable=not progress):
         # Generate tensors for this target's points (T_p) and vectors (T_v)
