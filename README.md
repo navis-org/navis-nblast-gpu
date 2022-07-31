@@ -49,6 +49,8 @@ Please see instructions on their website!
 >>> scores = nblast(dp_um, dp_um)
 ```
 
+Try it out on Google Colab [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/navis-org/navis-nblast-gpu/blob/master/examples/nblast_gpu_example.ipynb)
+
 ## TODO
 - scale to and distribute NBLAST onto multiple GPUs
 - check GPU memory limits (utility function?)
