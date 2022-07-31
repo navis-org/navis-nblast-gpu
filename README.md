@@ -7,8 +7,8 @@ up to 80% of the time in the nearest-neighbour search.
 
 This is not so much a problem if you're only ever working with a few hundred
 neurons at a time. Existing connectomics datasets, however, already contain
-tens of thousands of neurons and we will see the 100k mark being breached in
-the near future.
+tens of thousands of neurons and we will see the 100k mark being breached within
+the next year.
 
 You can throw more cores at it and that obviously helps speed things up. But
 wait a minute... don't machine learning folks use dem fancy graphic cards?
@@ -18,17 +18,25 @@ Turns out we can! [PyTorch-cluster](https://github.com/rusty1s/pytorch_cluster)
 provides an easy-to-use KNN implementation that can be run on a GPU.
 
 ## Advantages
-- fast - in particular for larger NBLAST! I've seen >10X speed-ups compared to
-  vanilla CPU NBLAST
+- fast: hard to compare but 1 high end GPU ~= 20 CPU cores
+- runs smoothly on Google Colab GPUs
 
 ## Disadvantages
 - requires a CUDA-compatible (i.e. NVIDIA) GPU
-- works only on Linux or Windows - no CUDA support on OSX :(
+- tricky to setup on OSX (see e.g. [this](https://pytorch.org/blog/introducing-accelerated-pytorch-training-on-mac/) article)
 - limited by the GPU's memory   
 
 ## Install
 
+First install `nblast-gpu` by either cloning and install with `pip3 install -e .`
+or directly from Github:
 
+```bash
+$ pip3 install git+https://github.com/navis-org/navis-nblast-gpu@main
+```
+
+Then you need to install [PyTorch-cluster](https://github.com/rusty1s/pytorch_cluster).
+Please see instructions on their website!
 
 ## Usage
 
